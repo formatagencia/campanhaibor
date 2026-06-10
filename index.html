@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposta de Campanha Sustentável — Ibor + JF Sabor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #2D6A4F;
+      --green-light: #D8EFE4;
+      --green-mid: #52B788;
+      --text: #1A1A1A;
+      --text-soft: #555;
+      --text-muted: #888;
+      --bg: #FFFFFF;
+      --bg-alt: #F7F9F8;
+      --border: #E4EAE7;
+      --radius: 10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* HEADER */
+    .hero {
+      background: var(--green);
+      color: #fff;
+      padding: 80px 24px 72px;
+      text-align: center;
+    }
+
+    .hero .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      max-width: 680px;
+      margin: 0 auto 20px;
+    }
+
+    .hero .subtitle {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-alt {
+      background: var(--bg-alt);
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    .section p, .section-alt p {
+      font-size: 15.5px;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    .section p:last-child, .section-alt p:last-child { margin-bottom: 0; }
+
+    /* HIGHLIGHT BLOCK */
+    .highlight {
+      border-left: 4px solid var(--green);
+      background: var(--green-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+
+    .highlight p {
+      color: var(--text) !important;
+      font-size: 15px !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* CONCEPT CARD */
+    .concept-card {
+      background: var(--green);
+      color: #fff;
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .concept-card .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 16px;
+    }
+
+    .concept-card h3 {
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .concept-card .tagline {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      max-width: 460px;
+      margin: 0 auto;
+      font-style: italic;
+    }
+
+    /* ALT NAMES GRID */
+    .names-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 600px) { .names-grid { grid-template-columns: 1fr; } }
+
+    .name-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      background: #fff;
+    }
+
+    .name-card strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .name-card span {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* LIST */
+    ul.clean-list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+
+    ul.clean-list li {
+      padding: 10px 0 10px 22px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      color: var(--text-soft);
+    }
+
+    ul.clean-list li:last-child { border-bottom: none; }
+
+    ul.clean-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 19px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green-mid);
+    }
+
+    /* AWARD BLOCKS */
+    .award-block {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+      align-items: flex-start;
+    }
+
+    .award-badge {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-gold { background: #F6E27F; color: #7A5C00; }
+    .badge-silver { background: #DDE3E9; color: #3A4A5A; }
+    .badge-bronze { background: #E8C9A0; color: #6B3B1A; }
+
+    .award-info strong {
+      display: block;
+      font-size: 15.5px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .award-info span { font-size: 14px; color: var(--text-muted); }
+
+    /* BENEFIT CARDS */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 600px) { .benefits-grid { grid-template-columns: 1fr; } }
+
+    .benefit-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 22px;
+      background: #fff;
+    }
+
+    .benefit-card .benefit-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .benefit-card h4 {
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .benefit-card p {
+      font-size: 13.5px !important;
+      color: var(--text-muted) !important;
+      margin-bottom: 0 !important;
+      line-height: 1.6;
+    }
+
+    /* QUOTE BLOCK */
+    .quote-shift {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .quote-item {
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      font-size: 14.5px;
+      font-weight: 500;
+    }
+
+    .quote-before {
+      background: #FFF0F0;
+      color: #AA3333;
+      border-left: 3px solid #D44;
+    }
+
+    .quote-after {
+      background: var(--green-light);
+      color: var(--green);
+      border-left: 3px solid var(--green-mid);
+    }
+
+    .quote-arrow {
+      text-align: center;
+      font-size: 20px;
+      color: var(--text-muted);
+    }
+
+    /* PANEL */
+    .panel-block {
+      background: var(--text);
+      color: #fff;
+      border-radius: 16px;
+      padding: 40px 36px;
+      margin: 32px 0;
+    }
+
+    .panel-block h3 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--green-mid);
+      margin-bottom: 16px;
+    }
+
+    .panel-block p {
+      font-size: 15px !important;
+      color: rgba(255,255,255,0.75) !important;
+      margin-bottom: 12px !important;
+    }
+
+    .panel-block p:last-child { margin-bottom: 0 !important; }
+
+    /* SEAL */
+    .seal-block {
+      border: 2px dashed var(--green-mid);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      margin: 28px 0;
+    }
+
+    .seal-block h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .seal-block p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 0 !important;
+    }
+
+    /* CONTENT TAGS */
+    .tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    /* CALLOUTS */
+    .callout-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .callout-list li {
+      font-size: 15px;
+      color: var(--text-soft);
+      padding: 8px 0 8px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .callout-list li:last-child { border-bottom: none; }
+
+    .callout-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* CONCLUSION */
+    .conclusion {
+      background: var(--green);
+      color: #fff;
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .conclusion h2 {
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      max-width: 620px;
+      margin: 0 auto 24px;
+      color: #fff;
+    }
+
+    .conclusion p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin: 0 auto 16px;
+      line-height: 1.7;
+    }
+
+    .conclusion .win-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .win-list li {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* SUBSECTION TITLE */
+    .sub-h {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 28px 0 10px;
+    }
+
+    /* INLINE ACCENT */
+    strong.accent { color: var(--green); }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="eyebrow">Proposta de Campanha Sustentável</div>
+    <h1>Ibor + JF Sabor</h1>
+    <p class="subtitle">Uma nova forma de conectar gastronomia, sustentabilidade e impacto real para a cidade.</p>
+  </header>
+
+  <!-- 1. CONTEXTO -->
+  <section class="section">
+    <div class="container">
+      <span class="section-num">01 — Contexto</span>
+      <h2>O festival, o tema e a oportunidade</h2>
+      <p>O JF Sabor é um dos principais projetos gastronômicos de Juiz de Fora e região, reunindo restaurantes, bares, chefs, empreendedores, patrocinadores e consumidores em torno da valorização da gastronomia local.</p>
+      <p>A cada edição, o festival trabalha um conceito central que orienta toda a campanha, a comunicação, a curadoria dos pratos e a experiência proposta ao público. Para este ano, o tema definido é <strong class="accent">Liberdade</strong>.</p>
+      <p>Esse conceito abre espaço para interpretações amplas, criativas e autorais. Ele permite que cada participante desenvolva seu prato a partir da sua identidade, da sua história, da sua cozinha e da sua forma particular de traduzir o tema.</p>
+      <div class="highlight">
+        <p>Dentro desse cenário, a entrada da Ibor como patrocinadora representa uma oportunidade estratégica importante, pois a empresa carrega uma pauta extremamente relevante para o setor gastronômico: a coleta correta do óleo de cozinha e sua transformação em combustível, promovendo sustentabilidade, responsabilidade ambiental e economia circular.</p>
+      </div>
+      <p>Mais do que uma marca apoiadora, a Ibor pode assumir um papel de protagonismo dentro do festival, conectando sua atuação diretamente à rotina dos estabelecimentos participantes e gerando impacto real durante todo o período da campanha.</p>
+    </div>
+  </section>
+
+  <!-- 2. ANÁLISE -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="section-num">02 — Análise da Proposta Inicial</span>
+      <h2>O que foi apresentado e os pontos de atenção</h2>
+      <p>A proposta inicialmente apresentada pela Ibor, com o conceito "Fritura do Futuro", parte de uma intenção positiva: criar uma ação própria dentro do festival, gerar engajamento entre os participantes e associar a marca a uma iniciativa de visibilidade.</p>
+      <p>No entanto, após análise estratégica, entendemos que o formato proposto apresenta alguns pontos de atenção que podem gerar ruído tanto para o JF Sabor quanto para a própria Ibor.</p>
+
+      <p class="sub-h">2.1. Conflito com o tema central do festival</p>
+      <p>O tema desta edição é <strong class="accent">Liberdade</strong>. A proposta de criar um desafio em que os participantes precisem desenvolver obrigatoriamente um prato com fritura acaba impondo uma direção criativa específica, o que vai contra a essência do conceito definido para o festival.</p>
+      <p>Se a ideia central é liberdade, o participante deve ter autonomia para criar dentro da sua identidade gastronômica. Obrigar o uso da fritura como técnica pode limitar a criação, reduzir a diversidade dos pratos e gerar uma contradição conceitual na comunicação.</p>
+      <p>O festival precisa preservar a coerência entre tema, regulamento, experiência e narrativa pública.</p>
+
+      <p class="sub-h">2.2. Criação de uma competição paralela</p>
+      <p>Outro ponto sensível é a criação de um segundo desafio de desenvolvimento de pratos dentro do JF Sabor. O festival já possui sua própria dinâmica, sua própria curadoria, seus critérios e sua disputa oficial. Inserir uma nova competição gastronômica paralela pode gerar confusão para os participantes e para o público.</p>
+      <p>Isso poderia diluir a força do festival principal, criando uma disputa concorrente dentro da própria campanha. Em vez de fortalecer o JF Sabor, a ação poderia acabar competindo pela atenção dos restaurantes, dos consumidores e da comunicação oficial.</p>
+
+      <p class="sub-h">2.3. Sobrecarga para os participantes</p>
+      <p>Os estabelecimentos participantes já precisam desenvolver um prato especial, precificar, treinar equipe, produzir conteúdo, participar das ações de divulgação, atender ao público e manter a qualidade da operação durante todo o festival.</p>
+      <p>Solicitar a criação de um segundo prato, com uma exigência técnica específica, adiciona uma nova camada de trabalho, custo e complexidade. Isso pode reduzir a adesão, gerar resistência e transformar uma ação de patrocínio em mais uma obrigação operacional para os participantes.</p>
+
+      <p class="sub-h">2.4. Risco de associação equivocada da marca</p>
+      <p>A Ibor não precisa ser percebida como uma marca que incentiva a fritura. O maior valor da empresa não está no ato de fritar, mas no que acontece depois: a destinação correta do óleo, a redução do impacto ambiental e a transformação desse resíduo em uma nova fonte de energia.</p>
+      <div class="highlight">
+        <p>A campanha não deve estimular a produção de mais óleo, mas sim valorizar o descarte responsável do óleo que já faz parte da rotina operacional dos estabelecimentos. Esse reposicionamento torna a mensagem mais madura, mais sustentável e mais alinhada ao propósito real da marca.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. OPORTUNIDADE -->
+  <section class="section">
+    <div class="container">
+      <span class="section-num">03 — Oportunidade Estratégica</span>
+      <h2>O verdadeiro território da Ibor dentro do festival</h2>
+      <p>A grande oportunidade para a Ibor dentro do JF Sabor não está em criar uma nova competição gastronômica.</p>
+      <p>Está em transformar o festival em uma vitrine de sustentabilidade aplicada à gastronomia.</p>
+      <p>O JF Sabor reúne exatamente o público que a Ibor precisa impactar: bares, restaurantes, cozinhas profissionais, empresários do setor alimentício, consumidores conscientes e lideranças locais.</p>
+      <p>Ao associar sua marca ao festival, a Ibor tem a chance de ocupar um território muito mais forte do que uma ação promocional pontual. Ela pode se posicionar como a empresa que ajuda a gastronomia da cidade a ser mais responsável, mais consciente e mais sustentável.</p>
+
+      <div class="quote-shift">
+        <div class="quote-item quote-before">"Vamos premiar quem fizer a melhor fritura."</div>
+        <div class="quote-arrow">↓</div>
+        <div class="quote-item quote-after">"Vamos reconhecer quem transforma sua operação em uma atitude sustentável."</div>
+      </div>
+
+      <p>Essa mudança eleva a campanha. Tira a ação do campo da brincadeira promocional e leva para o campo de propósito, reputação, ESG, impacto ambiental e legado.</p>
+    </div>
+  </section>
+
+  <!-- 4. NOVA PROPOSTA -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="section-num">04 — Nova Proposta de Campanha</span>
+      <h2>Uma campanha integrada, sem interferir no festival</h2>
+      <p>A proposta é criar uma campanha integrada ao JF Sabor, exclusiva para os estabelecimentos participantes do festival, com foco na coleta correta do óleo de cozinha usado durante o período do evento.</p>
+
+      <ul class="clean-list">
+        <li>A campanha não exige criação de novo prato</li>
+        <li>Não interfere no regulamento gastronômico</li>
+        <li>Não cria uma disputa paralela de receitas</li>
+        <li>Não contradiz o tema Liberdade</li>
+        <li>Valoriza a operação real dos estabelecimentos</li>
+        <li>Transforma a destinação correta do óleo em reconhecimento, visibilidade e responsabilidade ambiental</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. CONCEITO -->
+  <section class="section">
+    <div class="container">
+      <span class="section-num">05 — Conceito Sugerido</span>
+      <h2>O nome e a assinatura da campanha</h2>
+
+      <div class="concept-card">
+        <div class="label">Nome principal sugerido</div>
+        <h3>Energia do Sabor</h3>
+        <p class="tagline">O óleo que sai da cozinha volta para a sociedade em forma de energia.</p>
+      </div>
+
+      <p>O nome "Energia do Sabor" conecta diretamente três universos: <strong>Gastronomia</strong>, porque nasce dentro das cozinhas participantes do JF Sabor; <strong>Sustentabilidade</strong>, porque valoriza a destinação correta do óleo; e <strong>Transformação</strong>, porque mostra que um resíduo pode se tornar combustível, movimento e impacto positivo.</p>
+      <p>É um nome mais amplo, mais elegante e mais estratégico do que "Fritura do Futuro", pois não limita a campanha à técnica da fritura. Ele amplia a narrativa para o verdadeiro valor da Ibor: transformar resíduos em energia.</p>
+    </div>
+  </section>
+
+  <!-- 6. OUTROS NOMES -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="section-num">06 — Outras Opções de Nome</span>
+      <h2>Alternativas para avaliação da marca</h2>
+      <p>Caso a marca queira avaliar outras possibilidades, sugerimos também:</p>
+
+      <div class="names-grid">
+        <div class="name-card">
+          <strong>Sabor que Transforma</strong>
+          <span>Uma opção institucional, com forte apelo emocional e sustentável.</span>
+        </div>
+        <div class="name-card">
+          <strong>Do Prato ao Futuro</strong>
+          <span>Valoriza a jornada do óleo, da cozinha até sua transformação em combustível.</span>
+        </div>
+        <div class="name-card">
+          <strong>Circuito Sustentável JF Sabor</strong>
+          <span>Um nome mais técnico, ideal para uma ação recorrente dentro do festival.</span>
+        </div>
+        <div class="name-card">
+          <strong>Prêmio Cozinha Consciente</strong>
+          <span>Direto, simples e de fácil entendimento para os participantes.</span>
+        </div>
+        <div class="name-card" style="grid-column: 1 / -1;">
+          <strong>Selo Cozinha Sustentável</strong>
+          <span>Uma possibilidade com potencial de continuidade, podendo se tornar uma chancela anual.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. MECÂNICA -->
+  <section class="section">
+    <div class="container">
+      <span class="section-num">07 — Mecânica da Campanha</span>
+      <h2>Como a campanha vai funcionar</h2>
+      <p>A campanha funcionaria de forma simples, transparente e integrada à operação da Ibor.</p>
+      <p>Todos os estabelecimentos oficialmente inscritos no JF Sabor estariam automaticamente aptos a participar. Durante o período do festival, a Ibor realizaria a coleta do óleo de cozinha usado nos estabelecimentos participantes.</p>
+      <p>Cada coleta seria registrada com os seguintes dados:</p>
+      <ul class="clean-list">
+        <li>Nome do estabelecimento</li>
+        <li>Data da coleta</li>
+        <li>Volume coletado</li>
+        <li>Responsável pela entrega</li>
+        <li>Registro interno da Ibor</li>
+      </ul>
+      <p>Ao final do festival, os volumes seriam consolidados e os estabelecimentos com maior volume de óleo destinado corretamente seriam reconhecidos.</p>
+    </div>
+  </section>
+
+  <!-- 8. PREMIAÇÃO -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="section-num">08 — Critério de Premiação</span>
+      <h2>Reconhecendo quem mais contribuiu</h2>
+      <p>A premiação pode seguir dois formatos.</p>
+
+      <p class="sub-h">Opção 1: Premiação única</p>
+      <p>Reconhecimento para o estabelecimento que mais destinou óleo corretamente durante o período do festival.</p>
+      <div class="highlight">
+        <p><strong>Título sugerido: Casa Sustentável JF Sabor 2026</strong></p>
+      </div>
+
+      <p class="sub-h">Opção 2: Ranking com três premiados</p>
+      <p>Reconhecimento para os três estabelecimentos com maior volume de óleo coletado. Esse formato amplia o engajamento, gera mais expectativa e permite valorizar mais participantes.</p>
+
+      <div class="award-block">
+        <div class="award-badge badge-gold">1º</div>
+        <div class="award-info">
+          <strong>Ouro Sustentável</strong>
+          <span>Maior volume de óleo coletado no período</span>
+        </div>
+      </div>
+      <div class="award-block">
+        <div class="award-badge badge-silver">2º</div>
+        <div class="award-info">
+          <strong>Prata Sustentável</strong>
+          <span>Segundo maior volume de óleo coletado</span>
+        </div>
+      </div>
+      <div class="award-block">
+        <div class="award-badge badge-bronze">3º</div>
+        <div class="award-info">
+          <strong>Bronze Sustentável</strong>
+          <span>Terceiro maior volume de óleo coletado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CONTROLE -->
+  <section class="section">
+    <div class="container">
+      <span class="section-num">09 — Controle e Transparência</span>
+      <h2>Critérios claros, processo documentado</h2>
+      <p>Para garantir credibilidade à campanha, o controle deve ser simples, mas bem documentado. A Ibor ficaria responsável por registrar todas as coletas realizadas nos estabelecimentos participantes.</p>
+      <p>Esses dados poderiam ser organizados em uma planilha oficial contendo:</p>
+      <ul class="clean-list">
+        <li>Nome da casa participante</li>
+        <li>Quantidade de óleo coletado por visita</li>
+        <li>Data de cada coleta</li>
+        <li>Total acumulado no período</li>
+        <li>Ranking parcial, se aplicável</li>
+        <li>Ranking final</li>
+      </ul>
+      <p>Também é possível definir regras básicas:</p>
+      <ul class="callout-list">
+        <li>Serão consideradas apenas coletas realizadas dentro do período oficial do JF Sabor</li>
+        <li>Apenas estabelecimentos inscritos no festival poderão participar</li>
+        <li>O óleo deverá ser entregue dentro dos padrões técnicos de coleta da Ibor</li>
+        <li>A apuração final será feita com base nos registros oficiais da empresa</li>
+      </ul>
+      <p>Esse processo garante segurança, evita questionamentos e facilita a comunicação dos resultados.</p>
+    </div>
+  </section>
+
+  <!-- 10. COMUNICAÇÃO -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="section-num">10 — Possibilidades de Comunicação</span>
+      <h2>Uma linha editorial própria para a Ibor no festival</h2>
+      <p>A campanha pode gerar uma linha editorial própria dentro do JF Sabor, sem competir com o festival. A Ibor ganha presença de marca com conteúdo útil, educativo e de impacto.</p>
+
+      <p class="sub-h">Conteúdos possíveis:</p>
+      <div class="tags-wrap">
+        <span class="tag">Apresentação oficial da campanha</span>
+        <span class="tag">Vídeo manifesto da parceria</span>
+        <span class="tag">Posts sobre descarte correto</span>
+        <span class="tag">Reels com bastidores das coletas</span>
+        <span class="tag">Ranking parcial semanal</span>
+        <span class="tag">Cards com volume coletado</span>
+        <span class="tag">Conteúdo sobre economia circular</span>
+        <span class="tag">Depoimentos dos restaurantes</span>
+        <span class="tag">Post final com resultado</span>
+        <span class="tag">Entrega simbólica da premiação</span>
+      </div>
+
+      <p class="sub-h" style="margin-top: 32px;">Exemplos de chamadas:</p>
+      <ul class="callout-list">
+        <li>"O sabor também pode transformar o futuro."</li>
+        <li>"Durante o JF Sabor, cada litro de óleo descartado corretamente vira impacto positivo."</li>
+        <li>"A cozinha movimenta a cidade. A sustentabilidade também."</li>
+        <li>"O óleo que sai das cozinhas participantes ganha um novo destino com a Ibor."</li>
+        <li>"Mais do que patrocinar o festival, a Ibor ajuda a transformar a gastronomia em atitude sustentável."</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 11. PAINEL -->
+  <section class="section">
+    <div class="container">
+      <span class="section-num">11 — Painel de Impacto</span>
+      <h2>Transformar dados de coleta em conteúdo</h2>
+      <p>Uma das maiores oportunidades da campanha é transformar os dados de coleta em conteúdo. Durante o festival, a Ibor pode divulgar um painel de impacto com informações como:</p>
+      <ul class="clean-list">
+        <li>Total de litros de óleo coletados</li>
+        <li>Número de estabelecimentos participantes</li>
+        <li>Quantidade estimada de combustível gerado</li>
+        <li>Impacto ambiental evitado</li>
+        <li>Evolução semanal da campanha</li>
+      </ul>
+      <p>Esse painel cria percepção pública de resultado. Não é apenas uma campanha de marca. É uma ação com números, progresso e impacto real.</p>
+
+      <div class="panel-block">
+        <h3>Painel Energia do Sabor</h3>
+        <p>Durante o JF Sabor, os restaurantes participantes já destinaram corretamente mais de <strong style="color:#fff">X litros de óleo usado</strong>.</p>
+        <p>Esse volume será transformado em energia, reduzindo impactos ambientais e fortalecendo uma cadeia mais sustentável para a gastronomia local.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. BENEFÍCIOS IBOR -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="section-num">12 — Benefícios para a Ibor</span>
+      <h2>O que essa proposta entrega para a marca</h2>
+      <p>A nova proposta entrega um valor mais consistente para a Ibor como patrocinadora.</p>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-num">12.1</div>
+          <h4>Posicionamento de marca</h4>
+          <p>A Ibor passa a ser percebida como uma empresa que lidera uma pauta sustentável dentro do setor gastronômico, ocupando um espaço de autoridade, consciência ambiental e transformação.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-num">12.2</div>
+          <h4>Conexão com o público ideal</h4>
+          <p>A campanha envolve bares, restaurantes e cozinhas profissionais, exatamente o público que possui relação direta com o serviço oferecido pela Ibor.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-num">12.3</div>
+          <h4>Conteúdo com propósito</h4>
+          <p>Em vez de apenas aplicar logomarca em materiais, a Ibor passa a ter história, narrativa, dados e impacto para comunicar durante todo o festival.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-num">12.4</div>
+          <h4>Associação positiva com o JF Sabor</h4>
+          <p>Ao se conectar ao festival por meio de uma ação sustentável, a Ibor se associa a uma experiência positiva, gastronômica e cultural da cidade.</p>
+        </div>
+        <div class="benefit-card" style="grid-column: 1 / -1;">
+          <div class="benefit-num">12.5</div>
+          <h4>Legado</h4>
+          <p>Ao final da campanha, a marca poderá apresentar um resultado concreto: quantos litros foram coletados, quantos estabelecimentos participaram, qual foi o impacto ambiental da ação, quem foi reconhecido e qual foi o destino do óleo. Isso gera legado, prova de impacto e material institucional para a marca usar depois do festival.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. BENEFÍCIOS JF SABOR -->
+  <section class="section">
+    <div class="container">
+      <span class="section-num">13 — Benefícios para o JF Sabor</span>
+      <h2>O que o festival ganha com essa parceria</h2>
+      <p>A proposta também fortalece o festival. Ela agrega uma frente sustentável sem descaracterizar o evento.</p>
+      <ul class="clean-list">
+        <li>Preserva o tema Liberdade</li>
+        <li>Não sobrecarrega os participantes</li>
+        <li>Não cria competição paralela de pratos</li>
+        <li>Não interfere na experiência gastronômica principal</li>
+        <li>Amplia a relevância institucional do festival</li>
+        <li>Gera conteúdo positivo para imprensa, redes sociais e patrocinadores</li>
+        <li>Mostra que o JF Sabor está atento a temas atuais como sustentabilidade, economia circular e responsabilidade ambiental</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 14. BENEFÍCIOS PARTICIPANTES -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="section-num">14 — Benefícios para os Participantes</span>
+      <h2>O que muda para os estabelecimentos</h2>
+      <p>Os estabelecimentos participantes também ganham. A campanha valoriza uma prática que já faz parte da rotina de muitos restaurantes: o descarte correto do óleo.</p>
+      <p>Além disso, os participantes podem receber visibilidade pública por uma atitude positiva. Isso gera reputação, diferenciação e conexão com consumidores que valorizam marcas responsáveis.</p>
+      <div class="highlight">
+        <p>A premiação deixa de ser apenas uma disputa e passa a ser um reconhecimento pela consciência operacional da casa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. ENTREGA FINAL -->
+  <section class="section">
+    <div class="container">
+      <span class="section-num">15 — Sugestão de Entrega Final</span>
+      <h2>Um momento de celebração e legado</h2>
+      <p>Ao final do festival, a Ibor pode realizar uma entrega simbólica do prêmio durante um momento oficial do JF Sabor.</p>
+      <p>Esse momento pode gerar:</p>
+      <ul class="clean-list">
+        <li>Fotos institucionais</li>
+        <li>Vídeo de encerramento da campanha</li>
+        <li>Post de reconhecimento</li>
+        <li>Release para imprensa</li>
+        <li>Certificado para os vencedores</li>
+        <li>Conteúdo para redes sociais da Ibor, do JF Sabor e dos estabelecimentos premiados</li>
+      </ul>
+
+      <div class="concept-card" style="margin-top: 36px;">
+        <div class="label">Título sugerido para a entrega</div>
+        <h3>Prêmio Energia do Sabor</h3>
+        <p class="tagline">Reconhecimento às cozinhas que transformam atitude em impacto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16. SELO -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="section-num">16 — Possibilidade de Selo</span>
+      <h2>Uma chancela com potencial de continuidade</h2>
+      <p>Além da premiação, a Ibor pode criar um selo simbólico para os participantes. Esse selo pode ser usado nas redes sociais dos restaurantes, ampliando a presença da campanha e multiplicando a visibilidade da Ibor.</p>
+
+      <div class="seal-block">
+        <h3>Cozinha Parceira da Sustentabilidade</h3>
+        <p>JF Sabor + Ibor</p>
+      </div>
+
+      <p>Esse selo pode ser entregue digitalmente aos estabelecimentos participantes que aderirem à coleta durante o festival.</p>
+    </div>
+  </section>
+
+  <!-- 17. SÍNTESE -->
+  <section class="section">
+    <div class="container">
+      <span class="section-num">17 — Síntese Estratégica</span>
+      <h2>O que muda e por quê essa proposta é mais forte</h2>
+      <p>A proposta inicial tinha uma intenção interessante, mas apresentava riscos de conflito com o conceito do festival, com a dinâmica oficial do JF Sabor e com a própria percepção da marca Ibor.</p>
+      <p>A nova proposta mantém o desejo de ativação, engajamento e premiação, mas reposiciona a campanha em um território mais forte.</p>
+
+      <ul class="clean-list">
+        <li>Em vez de estimular uma técnica culinária específica, a campanha reconhece uma prática sustentável</li>
+        <li>Em vez de criar um festival paralelo, ela fortalece o festival existente</li>
+        <li>Em vez de premiar um prato, ela premia uma atitude</li>
+        <li>Em vez de falar apenas de fritura, ela fala de transformação</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONCLUSÃO -->
+  <section class="conclusion">
+    <div class="container">
+      <h2>Uma parceria com potencial de se tornar legado</h2>
+      <p>A parceria entre Ibor e JF Sabor tem potencial para ir muito além de uma ação promocional. Ela pode se tornar uma das frentes mais relevantes desta edição do festival, unindo gastronomia, sustentabilidade, responsabilidade ambiental e impacto positivo para a cidade.</p>
+      <p>A campanha <strong>Energia do Sabor</strong> nasce com esse propósito: valorizar quem cozinha, reconhecer quem descarta corretamente e mostrar que o futuro da gastronomia também passa pelas escolhas feitas depois que o prato sai da cozinha.</p>
+      <p><em>Porque quando o sabor encontra a sustentabilidade, todo mundo ganha.</em></p>
+      <ul class="win-list">
+        <li>Ganha o restaurante</li>
+        <li>Ganha o festival</li>
+        <li>Ganha a cidade</li>
+        <li>Ganha o meio ambiente</li>
+        <li>Ganha a Ibor</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Proposta de Campanha Sustentável — Ibor + JF Sabor &nbsp;·&nbsp; Elaborado por Format Agência</p>
+  </footer>
+
+</body>
+</html>
